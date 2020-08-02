@@ -34,10 +34,16 @@ function theme_scripts()
     wp_enqueue_style('leonidlezner-styles', get_template_directory_uri() . $css_file, array(), $version);
 }
 
-
 function get_assets_url()
 {
     return get_template_directory_uri() . '/dist/assets/';
+}
+
+function get_image_url($image)
+{
+    $image_file = '/dist/assets/images/' . $image;
+    $version = filemtime(get_template_directory() . $image_file);
+    return get_assets_url() . '/images/' . $image . '?v=' . $version;
 }
 
 function get_fonts_url($font_name)
@@ -54,8 +60,8 @@ function theme_setup()
 {
     load_theme_textdomain(theme_name, get_template_directory() . '/languages');
 
-    register_nav_menu('header-menu', __('Header Menu', theme_name));
-    register_nav_menu('footer-menu', __('Footer Menu', theme_name));
+    register_nav_menu('main-menu', __('Main Menu', theme_name));
+    register_nav_menu('aux-menu', __('Aux Menu', theme_name));
 
     add_theme_support('title-tag');
 
@@ -82,6 +88,21 @@ function additional_admin_color_schemes()
         array('#171717', '#FACA13', '#444444', '#FFFFFF'),
         array( 'base' => '#171717', 'focus' => '#fff', 'current' => '#fff' )
     );
+}
+
+function tag_list()
+{
+    $posttags = get_the_tags();
+
+    if ($posttags) {
+        echo '<ul class="list-inline tag-list-inline">';
+
+        foreach ($posttags as $tag) {
+            echo '<li class="list-inline-item small">' . $tag->name . '</li>';
+        }
+
+        echo '</ul>';
+    }
 }
 
 

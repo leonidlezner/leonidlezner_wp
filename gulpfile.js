@@ -3,6 +3,8 @@ const concat = require('gulp-concat');
 const gulp_sass = require('gulp-sass');
 const minifyCSS = require('gulp-csso');
 const del = require("del");
+const browserSync = require('browser-sync').create();
+const reload = browserSync.reload;
 
 exports.clean = function clean() {
     return del(["./dist"]);
@@ -31,15 +33,37 @@ exports.sass = function sass() {
         .pipe(gulp_sass())
         .pipe(minifyCSS())
         .pipe(dest("dist/css"))
+        .pipe(reload({stream: true}));
 }
 
 exports.watch = function() {
     watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'], exports.sass);
+    //watch(['*.php'], exports.sass);
 };
+
+exports.sync = function() {
+    browserSync.init({
+        proxy: "https://leonidlezner.local",
+
+        https: {
+            key: '/Applications/MAMP/Library/OpenSSL/certs/leonidlezner.local.key',
+            cert: '/Applications/MAMP/Library/OpenSSL/certs/leonidlezner.local.crt'
+        },
+
+        /*server: {
+            baseDir: "./public"
+        },*/
+
+        open: false
+    });
+
+    watch("*.php").on('change', browserSync.reload);
+    
+    exports.watch();
+}
 
 exports.default = series(exports.clean, parallel(
     exports.sass,
     exports.css,
-    exports.js,
     exports.assets,
 ));
