@@ -2,8 +2,9 @@ $font-family-base: "Open Sans", sans-serif;
 $primary-color: #faca13;
 $body-bg-color: #ffffff;
 $link-color: #f00;
-$h-color: #333;
+$h-color: #444;
 $h-highlight-color: $primary-color;
+$sidebar-width: 25%;
 $sidebar-width: 16.66667%;
 
 @import "_layout";
@@ -13,66 +14,169 @@ $sidebar-width: 16.66667%;
   //outline: 1px dashed red;
 }
 
-body {
-  background-image: repeating-linear-gradient(90deg, 
-    $primary-color 0.00%, $primary-color $sidebar-width,
-    $body-bg-color$sidebar-width, $body-bg-color 100%,
-  );
+@include media-breakpoint-up(lg) {
+  body {
+    background-image: repeating-linear-gradient(90deg, 
+      $primary-color 0.00%, $primary-color 25%,
+      $body-bg-color 25%, $body-bg-color 100%,
+    );
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  body {
+    background-image: repeating-linear-gradient(90deg, 
+      $primary-color 0.00%, $primary-color 16.66667%,
+      $body-bg-color 16.66667%, $body-bg-color 100%,
+    );
+  }
 }
 
 .side-menu {
   .nav-sidebar {
-    padding: 3em 1em 1em 1em;
-
-    a {
-      transition: 1s filter linear;
-    }
-
     a:hover {
       color: #ffffff !important;
-      filter: blur(1px);
-      transition: 0.5s filter linear;
     }
+    a:hover img {
+      filter: invert(100%) contrast(300%);
+    }
+  }
+}
 
-    .logo {
-      img {
-        width: 4em;
-      }
+@include media-breakpoint-down(md) {
+  .side-menu {
+    background-color: $primary-color;
 
-      a:hover img {
-        filter: invert(100%) contrast(300%);
-      }
+    .nav-sidebar {
+      //@include make-row();
 
-      p {
-        font-family: "PT Serif", serif;
-        font-weight: 600;
-        font-size: 1.4em;
-        margin-top: 0.5em;
-        padding-bottom: 0.5em;
+      .logo {
+        padding: 1.5em 3em 1.5em 3em;
+        @include make-row();
 
-        border-bottom: 1px solid lighten($primary-color, 30);
+        img {
+          width: 2.5em;
+        }
 
-        a {
-          color: #171717;
-          text-decoration: none;
+        p {
+          margin: 0.1em 0 0 0.5em;
+          font-family: "PT Serif", serif;
+          font-weight: 600;
+          font-size: 1.4em;
+
+          a {
+            color: #171717;
+            text-decoration: none;
+          }
         }
       }
-    }
 
-    ul.menu {
-      list-style: none;
-      padding: 0;
+      ul.menu {
+        list-style: none;
+        padding: 0 1em 0 1em;
 
-      a {
-        font-family: "PT Serif", serif;
-        color: #171717;
-        text-decoration: none;
-        font-size: 1.2em;
+        & > li {
+          display: inline-flex;
+          margin-right: 0.5em;
+          padding-left: 1em;
+          position: relative;
+          
+          a {
+            display: block;  
+            font-family: "PT Serif", serif;
+            color: #171717;
+            text-decoration: none;
+            font-size: 1.2em;
+          }
+
+          & > ul {
+            padding: 0;
+            display: none;
+            list-style: none;
+          }
+
+          &:hover > ul {
+            display: inline;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            padding-top: 0.5em;
+            z-index: 1000;
+            
+            li {
+              a {
+                background-color: $primary-color;
+                display: block;
+                padding: 0.7em 1em;
+                font-family: "Open Sans", sans-serif;
+                font-weight: normal;
+                font-size: 1em;
+              }
+            }
+          }
+        }
       }
     }
   }
 }
 
-.main-content-inner {
-  padding: 1em 3em;
+@include media-breakpoint-up(lg) {
+  .side-menu {
+    background-color: $primary-color;
+
+    .nav-sidebar {
+      padding: 4em 2em 2em 2em;
+
+      .logo {
+        img {
+          width: 4em;
+        }
+
+        p {
+          font-family: "PT Serif", serif;
+          font-weight: 600;
+          font-size: 1.4em;
+          margin-top: 0.5em;
+          padding-bottom: 0.5em;
+
+          a {
+            color: #171717;
+            text-decoration: none;
+          }
+        }
+      }
+
+      ul.menu {
+        list-style: none;
+        padding: 0;
+
+        &>li {
+          margin-bottom: 0.5em;
+
+          a {
+            font-family: "PT Serif", serif;
+            color: #171717;
+            text-decoration: none;
+            font-size: 1.2em;
+          }
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          padding: 0.5em 0 0.5em 0;
+
+          li {
+            margin: 0;
+          }
+
+          a {
+            font-family: "Open Sans", sans-serif;
+            font-weight: normal;
+            font-size: 1em;
+          }
+        }
+      }
+    }
+  }
 }

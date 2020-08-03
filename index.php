@@ -18,7 +18,7 @@ else
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-2 side-menu">
+        <div class="col-12 col-lg-3 col-xl-2 side-menu">
             <section class="nav-sidebar">
                 <div class="branding">
                     <div class="logo">
@@ -27,11 +27,7 @@ else
                     </div>
                 </div>
                 <div class="main-menu">
-                    <?php
-                    wp_nav_menu(array(
-                        'menu' => 'main-menu'
-                    ));
-                    ?>
+                    <?php wp_nav_menu(array( 'menu' => 'main-menu' )); ?>
                 </div>
             </section>
         </div>

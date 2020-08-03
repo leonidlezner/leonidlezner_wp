@@ -9,3 +9,15 @@ body, html {
     
 }
 
+@include media-breakpoint-down(md) {
+    .main-content-inner {
+        padding: 1em 2em;
+        margin-bottom: 2em;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .main-content-inner {
+        padding: 2em 4em;
+    }
+}
