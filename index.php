@@ -28,6 +28,7 @@ else
                 </div>
                 <div class="main-menu">
                     <?php wp_nav_menu(array( 'menu' => 'main-menu' )); ?>
+                    <a href="#" class="menu-toggle">Menu</a>
                 </div>
             </section>
         </div>

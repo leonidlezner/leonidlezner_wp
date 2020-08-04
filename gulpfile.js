@@ -11,11 +11,11 @@ exports.clean = function clean() {
 }
 
 exports.js = function js() {
-    return src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 
-        'node_modules/jquery/dist/jquery.min.js',
+    return src(['node_modules/jquery/dist/jquery.min.js',
+        'node_modules/bootstrap/dist/js/bootstrap.min.js', 
         'src/js/main.js'], { sourcemaps: true })
         .pipe(concat('main.min.js'))
-        .pipe(dest("dist/js", { sourcemaps: true }))
+        .pipe(dest("dist/js", { sourcemaps: true }));
 }
 
 exports.assets = function assets() {
@@ -38,6 +38,7 @@ exports.sass = function sass() {
 
 exports.watch = function() {
     watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'], exports.sass);
+    watch(['src/js/*.js'], exports.js);
     //watch(['*.php'], exports.sass);
 };
 
