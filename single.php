@@ -10,9 +10,9 @@
                 {
                     the_post();
                     ?>
-                    <div class="col-12 col-xl-6">
+                    <div class="col-12 col-xl-8">
                     <?php
-                    get_template_part('template-parts/content', 'post-card');
+                    get_template_part('template-parts/content', 'post');
                     ?>
                     </div>
                     <?php

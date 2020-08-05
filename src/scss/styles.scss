@@ -11,7 +11,7 @@ $sidebar-width: 16.66667%;
 @import "_typography";
 
 * {
-  //outline: 1px dashed red;
+  //outline: 1px dashed purple;
 }
 
 @include media-breakpoint-up(lg) {
@@ -30,6 +30,14 @@ $sidebar-width: 16.66667%;
       $body-bg-color 16.66667%, $body-bg-color 100%,
     );
   }
+
+  body.single {
+    background-image: repeating-linear-gradient(90deg, 
+      $primary-color 0.00%, $primary-color 16.66667%,
+      $body-bg-color 16.66667%, $body-bg-color 76%,
+      $primary-color 76%, $primary-color 100%,
+    );
+  }
 }
 
 .side-menu {
@@ -37,12 +45,50 @@ $sidebar-width: 16.66667%;
     a:hover {
       color: #ffffff;
     }
+
     a:hover img {
       filter: invert(100%) contrast(300%);
     }
+
+    ul.menu {
+      list-style: none;
+      padding: 0;
+
+      &>li {
+        margin-bottom: 0.5em;
+
+        a {
+          font-family: "PT Serif", serif;
+          color: #171717;
+          text-decoration: none;
+          font-size: 1.2em;
+
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        padding: 0.5em 0 0.5em 0;
+
+        li {
+          margin: 0;
+        }
+
+        a {
+          font-family: "Open Sans", sans-serif;
+          font-weight: normal;
+          font-size: 1em;
+        }
+      }
+    }    
   }
 }
 
+// Mobile view
 @include media-breakpoint-down(md) {
   .side-menu {
     background-color: $primary-color;
@@ -85,94 +131,21 @@ $sidebar-width: 16.66667%;
       }
 
       ul.menu {
-
         display: none;
         margin-top: 1em;
         margin-left: 2em;
         list-style: none;
         padding: 0;
-
-        &>li {
-          margin-bottom: 0.5em;
-
-          a {
-            font-family: "PT Serif", serif;
-            color: #171717;
-            text-decoration: none;
-            font-size: 1.2em;
-          }
-        }
-
-        ul {
-          list-style: none;
-          padding: 0;
-          padding: 0.5em 0 0.5em 0;
-
-          li {
-            margin: 0;
-          }
-
-          a {
-            font-family: "Open Sans", sans-serif;
-            font-weight: normal;
-            font-size: 1em;
-          }
-        }
       }
 
-
-
-/*
-      ul.menu {
-        list-style: none;
-        padding: 0 1em 0 1em;
-
-        & > li {
-          display: inline-flex;
-          margin-right: 0.5em;
-          padding-left: 1em;
-          position: relative;
-          
-          a {
-            display: block;  
-            font-family: "PT Serif", serif;
-            color: #171717;
-            text-decoration: none;
-            font-size: 1.2em;
-          }
-
-          & > ul {
-            padding: 0;
-            display: none;
-            list-style: none;
-          }
-
-          &:hover > ul {
-            display: inline;
-            position: absolute;
-            left: 0;
-            top: 100%;
-            padding-top: 0.5em;
-            z-index: 1000;
-            
-            li {
-              a {
-                background-color: $primary-color;
-                display: block;
-                padding: 0.7em 1em;
-                font-family: "Open Sans", sans-serif;
-                font-weight: normal;
-                font-size: 1em;
-              }
-            }
-          }
-        }
-      }*/
-
+      ul.menu-opened {
+        display: block;
+      }
     }
   }
 }
 
+// Desktop view
 @include media-breakpoint-up(lg) {
   .menu-toggle {
     display: none;
@@ -199,38 +172,10 @@ $sidebar-width: 16.66667%;
           a {
             color: #171717;
             text-decoration: none;
-          }
-        }
-      }
 
-      ul.menu {
-        list-style: none;
-        padding: 0;
-
-        &>li {
-          margin-bottom: 0.5em;
-
-          a {
-            font-family: "PT Serif", serif;
-            color: #171717;
-            text-decoration: none;
-            font-size: 1.2em;
-          }
-        }
-
-        ul {
-          list-style: none;
-          padding: 0;
-          padding: 0.5em 0 0.5em 0;
-
-          li {
-            margin: 0;
-          }
-
-          a {
-            font-family: "Open Sans", sans-serif;
-            font-weight: normal;
-            font-size: 1em;
+            &:hover {
+              color: #fff;
+            }
           }
         }
       }

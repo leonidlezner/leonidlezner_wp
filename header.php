@@ -27,3 +27,19 @@
 
 <body <?php body_class();?>>
 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-3 col-xl-2 side-menu">
+                <section class="nav-sidebar">
+                    <div class="branding">
+                        <div class="logo">
+                            <a href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo get_image_url('brand/logo.svg'); ?>" /></a>
+                            <p><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name');?></a></p>
+                        </div>
+                    </div>
+                    <div class="main-menu">
+                        <?php wp_nav_menu(array( 'menu' => 'main-menu' )); ?>
+                        <a href="#" class="menu-toggle">Menu</a>
+                    </div>
+                </section>
+            </div>
