@@ -3,6 +3,7 @@ $primary-color: #faca13;
 $body-bg-color: #ffffff;
 $link-color: #f00;
 $h-color: #444;
+$small-color: #aaa;
 $h-highlight-color: $primary-color;
 $sidebar-width: 25%;
 $sidebar-width: 16.66667%;
@@ -180,5 +181,36 @@ $sidebar-width: 16.66667%;
         }
       }
     }
+  }
+}
+
+.post-meta {
+  margin-bottom: 1em;
+  margin-top: -0.7em;
+  color: $small-color;
+
+  a {
+    color: $small-color;
+  }
+}
+
+.post-card {
+  .read-more {
+    background: #171717;
+    color: $body-bg-color;
+    display: inline-block;
+    padding: 0.2em 0.4em;
+
+    &:hover {
+      background: $primary-color;
+    }
+  }
+}
+
+a.button {
+  border-radius: 5px;
+
+  &:hover {
+    text-decoration: none;
   }
 }

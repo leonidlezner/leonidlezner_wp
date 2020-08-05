@@ -39,7 +39,6 @@ exports.sass = function sass() {
 exports.watch = function() {
     watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'], exports.sass);
     watch(['src/js/*.js'], exports.js);
-    //watch(['*.php'], exports.sass);
 };
 
 exports.sync = function() {
@@ -58,7 +57,7 @@ exports.sync = function() {
         open: false
     });
 
-    watch("*.php").on('change', browserSync.reload);
+    watch(['*.php', 'template-parts/*.php']).on('change', browserSync.reload);
     
     exports.watch();
 }
