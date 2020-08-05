@@ -32,6 +32,16 @@ function theme_scripts()
     $css_file = '/dist/css/styles.css';
     $version = filemtime(get_template_directory() . $css_file);
     wp_enqueue_style('leonidlezner-styles', get_template_directory_uri() . $css_file, array(), $version);
+
+    //enqueue_style('/dist/assets/fontawesome/web-fonts-with-css/css/fontawesome-all.css', 'leonidlezner-font-awesome');
+
+    $js_file = '/dist/js/main.min.js';
+    $version = filemtime(get_template_directory() . $js_file);
+    wp_enqueue_script('script-leonidlezner', get_template_directory_uri() . $js_file, '', $version);
+
+    if (is_singular() && comments_open() && get_option('thread_comments')) {
+        wp_enqueue_script('comment-reply');
+    }
 }
 
 function get_assets_url()
