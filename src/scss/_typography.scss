@@ -14,13 +14,22 @@ h6 {
     color: $h-color;
 
     &:hover {
-      color: $h-color;
+      color: $h-highlight-color;
       text-decoration: none;
     }
 
     &:active {
       color: $h-highlight-color;
     }
+  }
+}
+
+p {
+  &::selection {
+    background: $primary-color;
+  }
+  &::-moz-selection {
+    background: $primary-color;
   }
 }
 

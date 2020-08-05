@@ -2,7 +2,7 @@ $font-family-base: "Open Sans", sans-serif;
 $primary-color: #faca13;
 $body-bg-color: #ffffff;
 $link-color: #f00;
-$h-color: #444;
+$h-color: #333;
 $small-color: #aaa;
 $h-highlight-color: $primary-color;
 $sidebar-width: 25%;
@@ -186,23 +186,38 @@ $sidebar-width: 16.66667%;
 
 .post-meta {
   margin-bottom: 1em;
-  margin-top: -0.7em;
+  margin-top: -1em;
   color: $small-color;
 
   a {
-    color: $small-color;
+    color: $primary-color;
   }
 }
 
 .post-card {
   .read-more {
-    background: #171717;
+    background: $h-color;
     color: $body-bg-color;
     display: inline-block;
     padding: 0.2em 0.4em;
 
     &:hover {
       background: $primary-color;
+    }
+  }
+
+  h2 {
+    margin-top: 0.8em;
+  }
+
+  .thumbnail {
+    margin-top: 2.5em;
+    width: 100%;
+    box-shadow: 5px 5px 0px $primary-color;
+    
+    img {
+      width: 100%;  
+      height: auto;
     }
   }
 }
