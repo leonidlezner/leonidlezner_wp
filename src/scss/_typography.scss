@@ -1,54 +1,86 @@
+.screen-reader-text {
+  @include sr-only;
+}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "PT Serif", serif;
-  font-weight: 600;
-  margin: 2.75rem 0 1.05rem;
-  line-height: 1.15;
-
-  a {
-    color: $h-color;
-
-    &:hover {
-      color: $h-highlight-color;
-      text-decoration: none;
+.main-content {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "PT Serif", serif;
+    font-weight: 600;
+    margin: 2.75rem 0 1.05rem;
+    line-height: 1.15;
+  
+    a {
+      color: $h-color;
+  
+      &:hover {
+        color: $h-highlight-color;
+        background: #ffffff;
+        text-decoration: none;
+        outline: none;
+      }
+  
+      &:active {
+        color: $h-highlight-color;
+      }
     }
+  }
 
-    &:active {
-      color: $h-highlight-color;
-    }
+  h1 {
+    margin-top: 0;
+    font-size: 3.052em;
+  }
+  
+  h2 {
+    font-size: 2.441em;
+  }
+  
+  h3 {
+    font-size: 1.953em;
+  }
+  
+  h4 {
+    font-size: 1.563em;
+  }
+  
+  h5 {
+    font-size: 1.25em;
   }
 }
 
-p {
+* {
   &::selection {
     background: $primary-color;
+    color: #171717;
   }
   &::-moz-selection {
     background: $primary-color;
+    color: #171717;
+  }  
+}
+
+figcaption {
+  color: $h-color;
+  text-align: center;
+}
+
+.main-content {
+  a {
+    color: $primary-color;
+  
+    &:hover {
+      background-color: $primary-color;
+      color: #ffffff;
+      outline: 2px solid $primary-color;
+      text-decoration: none;
+    }
   }
-}
 
-h1 {
-  font-size: 3.052em;
-}
-
-h2 {
-  font-size: 2.441em;
-}
-
-h3 {
-  font-size: 1.953em;
-}
-
-h4 {
-  font-size: 1.563em;
-}
-
-h5 {
-  font-size: 1.25em;
+  .comment-reply-title, .comments-title {
+    margin-top: 0;
+  }
 }

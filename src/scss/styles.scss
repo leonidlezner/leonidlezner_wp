@@ -7,6 +7,12 @@ $small-color: #aaa;
 $h-highlight-color: $primary-color;
 $sidebar-width: 25%;
 $sidebar-width: 16.66667%;
+$grid-gutter-width: 0;
+$border-radius: 0;
+
+$theme-colors: (
+  "primary": $primary-color
+);
 
 @import "_layout";
 @import "_typography";
@@ -14,6 +20,19 @@ $sidebar-width: 16.66667%;
 * {
   //outline: 1px dashed purple;
 }
+
+table {
+  border: 2px solid $primary-color;
+  td, th {
+    border: 2px solid $primary-color;
+    padding: 0.5em 1em;
+  }
+
+  th {
+    background: $primary-color;
+  }
+}
+
 
 @include media-breakpoint-up(lg) {
   body {
@@ -25,19 +44,29 @@ $sidebar-width: 16.66667%;
 }
 
 @include media-breakpoint-up(xl) {
+  .main-content-inner {
+    //background: #fff;
+  }
+
   body {
-    background-image: repeating-linear-gradient(90deg, 
+    background-image: repeating-linear-gradient(90deg,
       $primary-color 0.00%, $primary-color 16.66667%,
       $body-bg-color 16.66667%, $body-bg-color 100%,
     );
   }
 
   body.single {
+    .main-content-inner {
+      background: none;
+    }
+
+    background: $primary-color;
+    /*
     background-image: repeating-linear-gradient(90deg, 
       $primary-color 0.00%, $primary-color 16.66667%,
-      $body-bg-color 16.66667%, $body-bg-color 76%,
-      $primary-color 76%, $primary-color 100%,
-    );
+      $body-bg-color 16.66667%, $body-bg-color 72.2%,
+      $primary-color 72.2%, $primary-color 100%,
+    );*/
   }
 }
 
@@ -95,7 +124,6 @@ $sidebar-width: 16.66667%;
     background-color: $primary-color;
 
     .nav-sidebar {
-      //@include make-row();
 
       .logo {
         padding: 1.5em 3em 1.5em 3em;
@@ -146,6 +174,7 @@ $sidebar-width: 16.66667%;
   }
 }
 
+
 // Desktop view
 @include media-breakpoint-up(lg) {
   .menu-toggle {
@@ -153,10 +182,8 @@ $sidebar-width: 16.66667%;
   }
 
   .side-menu {
-    background-color: $primary-color;
-
     .nav-sidebar {
-      padding: 4em 2em 2em 2em;
+      padding: 3em;
 
       .logo {
         img {
@@ -210,13 +237,17 @@ $sidebar-width: 16.66667%;
     margin-top: 0.8em;
   }
 
+  p {
+    padding: 0;
+    margin: 0;
+  }
+
   .thumbnail {
-    margin-top: 2.5em;
     width: 100%;
     box-shadow: 5px 5px 0px $primary-color;
     
     img {
-      width: 100%;  
+      width: 100%;
       height: auto;
     }
   }
@@ -228,4 +259,69 @@ a.button {
   &:hover {
     text-decoration: none;
   }
+}
+
+.post-thumbnail {
+  img {
+    width: 100%;  
+    height: auto;
+  }
+}
+
+.posts-pagination {
+  .nav-links {
+    margin: 2em auto;
+  }
+
+  .page-numbers {
+    padding: 0.5em 1em;
+    display: inline-block;
+    background: $primary-color;
+  }
+
+  a.page-numbers {
+    color: #171717;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .current {
+    background: $h-color;
+    color: #fff;
+  }
+}
+
+.comment-form {
+  label {
+    display: block;
+  }
+
+  textarea, input {
+    background: #fff;
+    //border: 2px solid $primary-color;
+    border: none;
+    padding: 0.5em 1em;
+  }
+
+  .submit {
+    padding: 0.5em 1em;
+    background: $primary-color;
+    border: none;
+  }
+
+  input[type="checkbox"] + label {
+    display: initial;
+    padding-left: 0.2em;
+  }
+}
+
+.media-content {
+  margin-bottom: 2em;
+}
+
+.post-comments {
+  background: #171717;
+  color: #aaa;
 }

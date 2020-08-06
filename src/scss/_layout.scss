@@ -10,28 +10,40 @@ body, html {
 }
 
 .sidebar {
-    background: yellowgreen;
+    
 }
 
 .post-card {
-    padding: 1em;
+    padding: 2em;
 }
 
 .post {
-    padding: 1em;
+    padding: 4em;
+    background: #fff;
+}
+
+.main-content-inner {
+    padding: 3em;
+}
+
+.single, .page {
+    .main-content-inner {
+        padding: 0;
+    }
 }
 
 // Mobile view
 @include media-breakpoint-down(md) {
     .main-content-inner {
-        padding: 0em 1em;
-        margin-bottom: 2em;
+        //padding: 0em 1em;
+        //margin-bottom: 2em;
     }
 }
 
 // Desktop view
 @include media-breakpoint-up(lg) {
-    .main-content-inner {
-        padding: 1em 3em;
-    }
+}
+
+.post-comments {
+    padding: 4em;
 }
