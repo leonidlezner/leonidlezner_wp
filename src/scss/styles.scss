@@ -60,13 +60,13 @@ table {
       background: none;
     }
 
-    background: $primary-color;
-    /*
+    //background: $primary-color;
+    
     background-image: repeating-linear-gradient(90deg, 
       $primary-color 0.00%, $primary-color 16.66667%,
       $body-bg-color 16.66667%, $body-bg-color 72.2%,
       $primary-color 72.2%, $primary-color 100%,
-    );*/
+    );
   }
 }
 

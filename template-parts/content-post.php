@@ -21,5 +21,5 @@
 </div>
 
 <div class="col-12 col-xl-4">
-
+        x
 </div>
