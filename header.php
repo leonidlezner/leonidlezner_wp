@@ -37,6 +37,7 @@
                                 <p><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name');?></a></p>
                             </div>
                         </div>
+
                         <div class="main-menu">
                             <?php wp_nav_menu(array( 'menu' => 'main-menu' )); ?>
                             <a href="#" class="menu-toggle">Menu</a>

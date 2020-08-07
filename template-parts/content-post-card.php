@@ -1,6 +1,6 @@
 <div class="post-card">
     <div class="thumbnail">
-        <a href="<?php echo get_permalink(get_the_ID()); ?>"><?php the_post_thumbnail(); ?></a>
+        <a href="<?php echo get_permalink(get_the_ID()); ?>" class="image-link"><?php the_post_thumbnail(); ?></a>
     </div>
 
     <?php the_title('<h2><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>'); ?>
