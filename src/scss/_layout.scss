@@ -1,8 +1,12 @@
 // Bootstrap
 @import "node_modules/bootstrap/scss/bootstrap";
 
-body, html {
+html {
     
+}
+
+.main-content-inner, .container-inner, .main-column {
+    min-height: 100vh;
 }
 
 .side-menu {
