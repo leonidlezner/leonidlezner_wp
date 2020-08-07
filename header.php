@@ -28,7 +28,7 @@
 <body <?php body_class();?>>
 
     <div class="container-fluid">
-            <div class="row">
+            <div class="row container-inner">
                 <div class="col-12 col-lg-3 col-xl-2 side-menu">
                     <section class="nav-sidebar">
                         <div class="branding">
@@ -43,4 +43,4 @@
                         </div>
                     </section>
                 </div>
-                <div class="col-12 col-lg">
+                <div class="col-12 col-lg main-column">
