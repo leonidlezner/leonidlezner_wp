@@ -1,0 +1,68 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2020-08-08 22:14+0200\n"
+"PO-Revision-Date: 2020-08-08 22:17+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: node_modules\n"
+"X-Poedit-SearchPathExcluded-1: src\n"
+"X-Poedit-SearchPathExcluded-2: dist\n"
+
+#: functions.php:73
+msgid "Main Menu"
+msgstr "Hauptmenü"
+
+#: functions.php:74
+msgid "Aux Menu"
+msgstr "Hilfsmenü"
+
+#: functions.php:98
+msgid "Leonid Lezner"
+msgstr "Leonid Lezner"
+
+#: inc/comment_walker.php:41
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: search.php:3
+#, php-format
+msgid "Search for \"%s\""
+msgstr "Suche nach „%s“"
+
+#: template-parts/content-none.php:3
+msgid "Sorry, nothing found"
+msgstr "Sorry, es wurde nichts gefunden"
+
+#: template-parts/content-post-card.php:9 template-parts/content-post.php:11
+msgid "At"
+msgstr "Am"
+
+#: template-parts/content-post-card.php:9 template-parts/content-post.php:11
+msgid "in"
+msgstr "in"
+
+#: template-parts/content-post.php:31
+msgid "Related posts"
+msgstr "Ähnliche Beiträge"
+
+#: template-parts/listing-standard.php:31
+msgid "Previous"
+msgstr "Zurück"
+
+#: template-parts/listing-standard.php:32
+msgid "Next"
+msgstr "Vor"
+
+#: template-parts/partial-search.php:5
+msgid "Search"
+msgstr "Suchen"
