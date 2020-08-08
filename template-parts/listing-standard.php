@@ -2,7 +2,7 @@
     <section class="main-content row">
         <div class="search-bar col-12">
             <?php get_template_part('template-parts/partial', 'search'); ?>
-        </div>       
+        </div>
 
         <?php if (isset($headline) && $headline): ?>
         <div class="results-headline col-12">

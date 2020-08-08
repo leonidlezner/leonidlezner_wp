@@ -1,4 +1,4 @@
-<div class="col-12 col-xl-8">
+<div class="col-12 col-xl-8 content-column">
     <div class="post-thumbnail">
         <?php the_post_thumbnail(); ?>
         <?php the_tags('<ul class="tags"><li>', '</li><li>', '</li></ul>'); ?>
@@ -25,4 +25,16 @@
     <div class="search-sidebar">
         <?php get_template_part('template-parts/partial', 'search'); ?>
     </div>
+
+    <div class="sidebar-box">
+        <div class="sidebar-box-headline">
+            <h3><?php echo __('Related posts', 'leonidlezner') ?></h3>
+        </div>
+        <div class="sidebar-box-body">
+            <?php related_posts(); ?>
+        </div>
+    </div>
+
+    
+
 </div>

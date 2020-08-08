@@ -2,6 +2,10 @@
 
 <div class="main-content-inner">
     <section class="main-content row">
+        <div class="search-bar col-12">
+            <?php get_template_part('template-parts/partial', 'search'); ?>
+        </div>
+
         <?php
         if (have_posts())
         {

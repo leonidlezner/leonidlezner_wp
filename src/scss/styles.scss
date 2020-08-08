@@ -21,19 +21,6 @@ $theme-colors: (
   //outline: 1px dashed purple;
 }
 
-table {
-  border: 2px solid $primary-color;
-  td, th {
-    border: 2px solid $primary-color;
-    padding: 0.5em 1em;
-  }
-
-  th {
-    background: $primary-color;
-  }
-}
-
-
 @include media-breakpoint-up(lg) {
   body {
     background: $primary-color;
@@ -115,16 +102,21 @@ table {
     background-color: $primary-color;
 
     .nav-sidebar {
+      
+      .branding {
+        //display: flex;
+        //justify-content: space-between;
+      }
 
       .logo {
         padding: 1.5em 3em 1.5em 3em;
-        @include make-row();
+        display: flex;
 
         img {
           width: 2.5em;
         }
 
-        p {
+        p.name {
           margin: 0.1em 0 0 0.5em;
           font-family: "PT Serif", serif;
           font-weight: 600;
@@ -137,13 +129,21 @@ table {
         }
       }
 
+      p.description {
+        //padding: 2em 3em 0 0;
+        margin-left: 3em;
+        margin-right: 3em;
+        font-style: italic;
+        font-family: "PT Serif", serif;
+      }
+
       .menu-toggle {
         text-decoration: none;
         background: #fff;
         color: #171717;
         display: inline-block;
         padding: 0.2em 1em;
-        margin-left: 2em;
+        margin-left: 3em;
 
         &:hover {
           color: $primary-color;
@@ -153,7 +153,7 @@ table {
       ul.menu {
         display: none;
         margin-top: 1em;
-        margin-left: 2em;
+        margin-left: 3em;
         list-style: none;
         padding: 0;
       }
@@ -181,12 +181,13 @@ table {
           width: 4em;
         }
 
-        p {
+        p.name {
           font-family: "PT Serif", serif;
           font-weight: 600;
           font-size: 1.4em;
           margin-top: 0.5em;
-          padding-bottom: 0.5em;
+          padding-bottom: 0.0em;
+          margin-bottom: 0.5em;
 
           a {
             color: #171717;
@@ -198,8 +199,18 @@ table {
           }
         }
       }
+
+      p.description {
+        font-style: italic;
+        //font-family: "PT Serif", serif;
+        margin-bottom: 2em;
+      }
     }
   }
+}
+
+.content-column {
+  background: #fff;
 }
 
 .post-meta {
@@ -365,10 +376,7 @@ a.button {
 
   span {
     display: block;
-    background: $primary-color;
-    
-    mask: url("../assets/images/search-solid.svg") no-repeat center;
-    -webkit-mask: url("../assets/images/search-solid.svg") no-repeat center;
+    background: url("../assets/images/search-solid-faca13.svg") no-repeat center;
     
     width: 2em;
     text-indent: 100%;
@@ -390,49 +398,66 @@ a.button {
   }
 }
 
-@include media-breakpoint-down(lg) {
-  .search-sidebar {
-    background: #171717;
-    text-align: center;
-    padding-top: 1em;
-    padding-bottom: 3em;
+.search-sidebar {
+  background: #fff;
+  text-align: center;
+  padding-top: 2em;
+  padding-bottom: 2em;
 
-    input {
-      border: none;
-      padding: 0.5em 1em;
-      border-radius: 20px;
-      width: 70%;
+  input {
+    border: 2px solid $primary-color;
+    padding: 0.5em 1em;
+    border-radius: 20px;
+    width: 70%;
+  }
+}
+
+.posts-list-small {
+  list-style: none;
+  padding: 0;
+
+  li {
+    background: rgba($color: #fff, $alpha: 0.8);
+    
+    .headline {
+      margin: 0em;
+      padding: 1em;
     }
 
-    .search-button {
-      background: #171717;
+    p {
+      padding: 0 1.5em 1.5em 1.5em;
+    }
 
-      span {
-        background: #fff;
+    .post-thumbnail {
+      //box-shadow: 5px 5px 0px #333;
+    }
+
+    .headline {
+      
+    }
+
+    margin-bottom: 3em;
+    margin-top: 2em;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .posts-list-small {
+    li {
+      .headline {
+        padding: 1em 0 0.5em 0;
+      }
+
+      p {
+        padding: 0;
       }
     }
   }
 }
 
-@include media-breakpoint-up(xl) {
-  .search-sidebar {
-    background: #fff;
-    text-align: center;
-    padding-top: 2em;
-    padding-bottom: 2em;
-
-    input {
-      border: 2px solid $primary-color;
-      padding: 0.5em 1em;
-      border-radius: 20px;
-      width: 70%;
-    }
-
-    .search-button {
-      background: #fff;
-      span {
-        background: $primary-color;
-      }
-    }
+@include media-breakpoint-down(md) {
+  .post-thumbnail .tags {
+    padding-left: 2em;
+    padding-right: 2em;
   }
 }

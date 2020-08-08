@@ -34,8 +34,9 @@
                         <div class="branding">
                             <div class="logo">
                                 <a href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo get_image_url('brand/logo.svg'); ?>" /></a>
-                                <p><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name');?></a></p>
+                                <p class="name"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name');?></a></p>
                             </div>
+                            <p class="description"><?php bloginfo('description'); ?></p>
                         </div>
 
                         <div class="main-menu">

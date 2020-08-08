@@ -40,18 +40,35 @@ html {
     padding: 2em;
 }
 
-// Mobile view
-@include media-breakpoint-down(md) {
-    .main-content-inner {
-        //padding: 0em 1em;
-        //margin-bottom: 2em;
-    }
-}
-
 .post-comments {
     padding: 4em;
 }
 
+// Mobile view
+@include media-breakpoint-down(md) {
+    .post-card {
+        padding: 0;
+        //padding: 0em 1em;
+        margin-bottom: 3em;
+    }
+    .post {
+        padding: 3em;
+    }
+    .post-comments {
+        padding: 3em;
+    }
+}
+
 .results-headline {
-    padding-left: 2em;
+    padding: 2em 2em 0 2em;
+}
+
+.sidebar-box {
+    padding: 3em;
+
+    .sidebar-box-headline {
+        h3 {
+            margin: 0;
+        }
+    }
 }
