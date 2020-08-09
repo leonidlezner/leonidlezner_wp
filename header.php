@@ -41,8 +41,16 @@
 
                         <div class="main-menu">
                             <?php wp_nav_menu(array( 'menu' => 'main-menu' )); ?>
-                            <a href="#" class="menu-toggle">Menu</a>
+
+                            <div class="contact">
+                                <ul class="accounts">
+                                    <li class="twitter"><a href="https://twitter.com/leonidlezner">Twitter</a></li>
+                                    <li class="linkedin"><a href="https://www.linkedin.com/in/leonid-lezner/">LinkedIn</a></li>
+                                </ul>
+                            </div>
                         </div>
+                        
+                        <a href="#" class="menu-toggle">Menu</a>
                     </section>
                 </div>
                 <div class="col-12 col-lg main-column">

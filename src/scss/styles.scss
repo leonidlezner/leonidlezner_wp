@@ -150,7 +150,7 @@ $theme-colors: (
         }
       }
 
-      ul.menu {
+      .main-menu {
         display: none;
         margin-top: 1em;
         margin-left: 3em;
@@ -158,7 +158,7 @@ $theme-colors: (
         padding: 0;
       }
 
-      ul.menu-opened {
+      .menu-opened {
         display: block;
       }
     }
@@ -372,7 +372,8 @@ a.button {
 .search-button {
   padding: 0;
   border: none;
-  background: #fff;
+  background: none;
+  margin-left: -3em;
 
   span {
     display: block;
@@ -387,13 +388,16 @@ a.button {
 }
 
 .search-bar {
-  //background: red;
   text-align: center;
   margin-bottom: 1em;
 
+  form {
+    margin-right: 1em;
+  }
+
   input {
     border: 1px solid $primary-color;
-    padding: 0.5em 1em;
+    padding: 0.5em 3em 0.5em 1em;
     border-radius: 20px;
   }
 }
@@ -404,9 +408,13 @@ a.button {
   padding-top: 2em;
   padding-bottom: 2em;
 
+  form {
+    margin-right: 1em;
+  }
+
   input {
     border: 2px solid $primary-color;
-    padding: 0.5em 1em;
+    padding: 0.5em 3em 0.5em 1em;
     border-radius: 20px;
     width: 70%;
   }
@@ -455,9 +463,58 @@ a.button {
   }
 }
 
+.contact {
+  margin-top: 3em;
+
+  ul.accounts {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+
+    li {
+      margin: 0 0.2em 0 0;
+      padding: 0;
+
+      a {
+        margin: 0;
+        display: block;
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 2em;
+        height: 2em;
+
+        &:hover {
+          filter: invert(100%) contrast(300%);
+        }
+      }
+
+    }
+
+    li.twitter a {
+      background: url("../assets/images/twitter-square-brands.svg") no-repeat center;
+    }
+
+    li.linkedin a {
+      background: url("../assets/images/linkedin-brands.svg") no-repeat center;
+    }
+  }
+}
+
+// Mobile view
 @include media-breakpoint-down(md) {
   .post-thumbnail .tags {
     padding-left: 2em;
     padding-right: 2em;
+  }
+
+  .search-bar {
+    margin-bottom: 2em;
+  }
+
+  .contact {
+    margin-top: 0;
+    margin-bottom: 1em;
   }
 }
