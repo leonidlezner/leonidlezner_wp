@@ -263,38 +263,40 @@ a.button {
   }
 }
 
-.post-thumbnail {
-  position: relative;
-
-  img {
-    width: 100%;  
-    height: auto;
-  }
-
-  .tags {
-    position: absolute;
-    bottom: 0;
-    list-style: none;
-    padding-left: 3em;
-    padding-right: 3em;
-
-    li {
-      display: inline-block;
-      margin-left: 1em;
-
-      a {
-        font-size: 1.3em;
-        font-family: "PT Serif", serif;
-        font-weight: 600;
-        color: #fff;
-        background: none;
-
-        &:hover {
-          color: $primary-color;
-        }
-
-        &::before {
-          content: "#";
+.content-column {
+  .post-thumbnail {
+    position: relative;
+  
+    img {
+      width: 100%;  
+      height: auto;
+    }
+  
+    .tags {
+      position: absolute;
+      bottom: 0;
+      list-style: none;
+      padding-left: 3em;
+      padding-right: 3em;
+  
+      li {
+        display: inline-block;
+        margin-left: 1em;
+  
+        a {
+          font-size: 1.3em;
+          font-family: "PT Serif", serif;
+          font-weight: 600;
+          color: #fff;
+          background: none;
+  
+          &:hover {
+            color: $primary-color;
+          }
+  
+          &::before {
+            content: "#";
+          }
         }
       }
     }
@@ -302,7 +304,7 @@ a.button {
 }
 
 @include media-breakpoint-up(lg) {
-  .post-thumbnail .tags {
+  .content-column .post-thumbnail .tags {
     li {
       a {
         font-size: 2vw;
@@ -424,7 +426,7 @@ a.button {
   list-style: none;
   padding: 0;
 
-  li {
+  & > li {
     background: rgba($color: #fff, $alpha: 0.8);
     
     .headline {
@@ -434,6 +436,7 @@ a.button {
 
     p {
       padding: 0 1.5em 1.5em 1.5em;
+      margin: 0;
     }
 
     .post-thumbnail {
@@ -447,11 +450,48 @@ a.button {
     margin-bottom: 3em;
     margin-top: 2em;
   }
+
+  .post-thumbnail {
+    img {
+      width: 100%;  
+      height: auto;
+    }
+  }
+
+  .tags {
+    list-style: none;
+    padding: 0em 1.5em 1em 1.5em;
+
+    li {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      margin-right: 0.5em;
+
+      a {
+        color: #171717;
+        /*font-size: 1.3em;
+        font-family: "PT Serif", serif;
+        font-weight: 600;
+        color: #fff;
+        background: none;*/
+
+        &:hover {
+          color: #fff;
+        }
+
+        &::before {
+          content: "#";
+        }
+      }
+    }
+  }
 }
+
 
 @include media-breakpoint-down(lg) {
   .posts-list-small {
-    li {
+    & > li {
       .headline {
         padding: 1em 0 0.5em 0;
       }
