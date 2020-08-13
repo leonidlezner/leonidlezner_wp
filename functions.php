@@ -117,7 +117,6 @@ function tag_list()
     }
 }
 
-
 add_action('wp_enqueue_scripts', 'theme_scripts');
 add_action('admin_init', 'additional_admin_color_schemes');
 add_action('after_setup_theme', 'theme_setup');

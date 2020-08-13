@@ -26,15 +26,6 @@
         <?php get_template_part('template-parts/partial', 'search'); ?>
     </div>
 
-    <div class="sidebar-box">
-        <div class="sidebar-box-headline">
-            <h3><?php echo __('Related posts', 'leonidlezner') ?></h3>
-        </div>
-        <div class="sidebar-box-body">
-            <?php related_posts(); ?>
-        </div>
-    </div>
-
-    
+    <?php related_posts(); wp_dequeue_style('yarppRelatedCss'); ?>  
 
 </div>
