@@ -550,6 +550,10 @@ a.button {
     padding-right: 2em;
   }
 
+  .posts-list-small .tags {
+    padding: 1em 0 0 0;
+  }
+
   .search-bar {
     margin-bottom: 2em;
   }
@@ -558,4 +562,9 @@ a.button {
     margin-top: 0;
     margin-bottom: 1em;
   }
+}
+
+.main-content img {
+  max-width: 100%;
+  height: auto;
 }
