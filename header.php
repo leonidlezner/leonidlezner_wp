@@ -18,7 +18,7 @@
         @font-face {
             font-family: "Open Sans";
             font-weight: bold;
-            src: url('<?php echo get_fonts_url('OpenSans-Bols.ttf'); ?>');
+            src: url('<?php echo get_fonts_url('OpenSans-Bold.ttf'); ?>');
         }
     </style>
 

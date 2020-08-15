@@ -19,6 +19,7 @@ if ( post_password_required() ) {
         <?php
             wp_list_comments(array(
                 'style'         => 'div',
+                'type'          => 'comment',
                 'max_depth'     => 4,
                 'short_ping'    => true,
                 'avatar_size'   => '50',
