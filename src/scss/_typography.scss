@@ -102,6 +102,45 @@ figcaption {
   .comment-reply-title, .comments-title {
     margin-top: 0;
   }
+
+  blockquote {
+    padding: 1rem 1rem 1rem 1rem;
+    border-left: 5px solid $primary-color;
+    
+    p {
+      margin: 0;
+      quotes: "“" "”" "‘" "’";
+      font-style: italic;
+      font-family: "PT Serif", serif;
+
+      &::before, &::after {
+        font-size: 3em;
+        font-family: "PT Serif", serif;
+        line-height: 0.2em;
+        vertical-align: bottom;
+        color: $primary-color;
+      }
+
+      &::before {
+        content: open-quote;
+        margin-right: 0.2em;
+      }
+
+      &::after {
+        content: close-quote;
+        margin-left: 0em;
+      }
+    }
+
+    cite {
+      margin-top: 1em;
+      display: inline-block;
+      font-style: normal;
+      font-size: 0.9em;
+      color: #999;
+    }
+  }
+  
 }
 
 table {

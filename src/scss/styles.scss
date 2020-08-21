@@ -344,10 +344,14 @@ a.button {
     display: block;
   }
 
+  textarea {
+    width: 100%;
+  }
+
   textarea, input {
     background: #fff;
-    //border: 2px solid $primary-color;
-    border: none;
+    border: 5px solid $primary-color;
+    //border: none;
     padding: 0.5em 1em;
   }
 
